@@ -27,8 +27,8 @@ const images = [
 ];
 
 const carouselImageEl = document.querySelector(".carousel-image")
-const upButton = document.getElementById('previousButton')
-const downButton = document.getElementById('nextButton')
+const upButton = document.getElementById('previous')
+const downButton = document.getElementById('next')
 
 
 for (let i = 0; i < images.length; i++) {
@@ -42,6 +42,13 @@ for (let i = 0; i < images.length; i++) {
 
 
 
+
 upButton.addEventListener("click", function () {
-   alert('click')
+   console.log('pippo')
 })
+
+
+downButton.addEventListener("click", function () {
+   console.log('pippo')
+})
+
