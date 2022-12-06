@@ -1,7 +1,7 @@
 const images = [
    {
       image: 'img/01.webp',
-      title: 'Marvel\'s Spiderman Miles Morale',
+      title: 'Marvel\'s Spiderman Miles Morales',
       text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
    },
    {
@@ -33,22 +33,31 @@ const downButton = document.getElementById('next')
 
 for (let i = 0; i < images.length; i++) {
    carouselImageEl.innerHTML +=
-      `
-      <div class="my_carousel-item">
-         <img src=${images[i].image} alt="${images[i].title}">
-      <div>
-      `
+   `
+   <div class="my_carousel-item">
+   <img src=${images[i].image} alt="${images[i].title}">
+   <div>
+   `
+   
 }
 
-
+const carouselItem = document.querySelectorAll(".my_carousel-item")
 
 
 upButton.addEventListener("click", function () {
-   console.log('pippo')
+   if (carouselItem.className.contains('active')) {
+      carouselItem.classList.remove('active')
+   } else {
+      carouselItem.classList.add('active')
+   }
 })
 
 
 downButton.addEventListener("click", function () {
-   console.log('pippo')
+   if (carouselItem.classList.contains('active')) {
+      carouselItem.classList.remove('active')
+   } else {
+      carouselItem.classList.add('active')
+   }
 })
 
