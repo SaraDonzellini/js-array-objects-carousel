@@ -26,38 +26,43 @@ const images = [
    }
 ];
 
-const carouselImageEl = document.querySelector(".carousel-image")
-const upButton = document.getElementById('previous')
-const downButton = document.getElementById('next')
+const carouselImageEl = document.querySelector(".carousel-image");
+const upButton = document.getElementById('previous');
+const downButton = document.getElementById('next');
 
+
+let conteggio = 0;
 
 for (let i = 0; i < images.length; i++) {
-   carouselImageEl.innerHTML +=
-   `
-   <div class="my_carousel-item">
-   <img src=${images[i].image} alt="${images[i].title}">
-   <div>
-   `
+   if (i == 0) {     
+      carouselImageEl.innerHTML +=
+      `
+      <div class="my_carousel-item active">
+      <img src=${images[i].image} alt="${images[i].title}">
+      <div>
+      `;
+      } else if (i > 0){
+      carouselImageEl.innerHTML +=
+      `
+      <div class="my_carousel-item">
+      <img src=${images[i].image} alt="${images[i].title}">
+      <div>
+      `;
    
+   }
 }
 
-const carouselItem = document.querySelectorAll(".my_carousel-item")
-
-
-upButton.addEventListener("click", function () {
-   if (carouselItem.className.contains('active')) {
-      carouselItem.classList.remove('active')
-   } else {
-      carouselItem.classList.add('active')
-   }
-})
+const carouselItems = document.querySelectorAll(".my_carousel-item");
 
 
 downButton.addEventListener("click", function () {
-   if (carouselItem.classList.contains('active')) {
-      carouselItem.classList.remove('active')
-   } else {
-      carouselItem.classList.add('active')
-   }
+   carouselItems[conteggio].classList.remove("active");
+   conteggio++;
+   carouselItems[conteggio].classList.add("active")
 })
 
+upButton.addEventListener("click", function () {
+   carouselItems[conteggio].classList.remove("active");
+   conteggio--;
+   carouselItems[conteggio].classList.add("active")
+})
