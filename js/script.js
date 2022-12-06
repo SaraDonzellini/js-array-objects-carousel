@@ -41,7 +41,7 @@ for (let i = 0; i < images.length; i++) {
       <img src=${images[i].image} alt="${images[i].title}">
       <div>
       `;
-      } else if (i > 0){
+   } else if (i > 0){
       carouselImageEl.innerHTML +=
       `
       <div class="my_carousel-item">
@@ -56,13 +56,15 @@ const carouselItems = document.querySelectorAll(".my_carousel-item");
 
 
 downButton.addEventListener("click", function () {
-   carouselItems[conteggio].classList.remove("active");
+	carouselItems[conteggio].classList.remove("active");
    conteggio++;
    carouselItems[conteggio].classList.add("active")
+
 })
 
 upButton.addEventListener("click", function () {
    carouselItems[conteggio].classList.remove("active");
    conteggio--;
    carouselItems[conteggio].classList.add("active")
+
 })
