@@ -40,12 +40,14 @@ div.previous{
     top: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
+    cursor: crosshair;
 }
 
 div.next{
     bottom: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
+    cursor: crosshair;
 }
 
 div.my_carousel-item {
