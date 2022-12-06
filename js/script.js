@@ -39,6 +39,8 @@ for (let i = 0; i < images.length; i++) {
       `
       <div class="my_carousel-item active">
       <img src=${images[i].image} alt="${images[i].title}">
+      <h1>${images[i].title}</h1>
+      <p>${images[i].text}</p>
       <div>
       `;
    } else if (i > 0){
@@ -46,6 +48,8 @@ for (let i = 0; i < images.length; i++) {
       `
       <div class="my_carousel-item">
       <img src=${images[i].image} alt="${images[i].title}">
+      <h1>${images[i].title}</h1>
+      <p>${images[i].text}</p>
       <div>
       `;
    
@@ -58,6 +62,9 @@ const carouselItems = document.querySelectorAll(".my_carousel-item");
 downButton.addEventListener("click", function () {
 	carouselItems[conteggio].classList.remove("active");
    conteggio++;
+   if (conteggio >= images.length){
+      conteggio = 0
+   }
    carouselItems[conteggio].classList.add("active")
 
 })
@@ -65,6 +72,9 @@ downButton.addEventListener("click", function () {
 upButton.addEventListener("click", function () {
    carouselItems[conteggio].classList.remove("active");
    conteggio--;
+   if (conteggio < 0){
+      conteggio = images.length - 1
+   }
    carouselItems[conteggio].classList.add("active")
 
 })

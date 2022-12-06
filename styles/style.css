@@ -4,7 +4,7 @@ body{
 }
 
 main{
-    height: 80vh;
+    height: 70vh;
 }
 
 div.carousel-wrapper{
@@ -21,7 +21,7 @@ div.carousel-image{
 }
 
 /* div.carousel-thumbnails{
-    width: 21.5%;
+    width: 22%;
     background-color: violet;
 } */
 
